@@ -1,0 +1,37 @@
+<style>
+#info-container {
+	border-style: solid;
+	background: transparent;
+	width: 850px;
+	height: 3500px;
+	border-color: yellow;
+	border-radius: 10px;
+	color: white;
+	padding: 15px 32px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+</style>
+
+<input type="text" placeholder="Search for a character" #searchInput>
+<button (click)="getMusic(searchInput.value)">Search</button>
+
+<div id="info-container">
+	
+<ul>
+	<span *ngIf="loading"> <img src="http://123emoji.com/wp-content/uploads/2016/04/Star-Wars-Yoda-Collection-Stickers-639892.png" alt=""></span>
+	<li *ngFor="let song of data">
+		<h1>{{song.name}}</h1>
+		<h3>Height in Centimeters: {{song.height}}</h3>
+		<h3>Mass: {{song.height}}</h3>
+		<h3>Hair Color: {{song.hair_color}}</h3>
+		<h3>Skin Color: {{song.skin_color}}</h3>
+		<h3>Eye Color: {{song.eye}}</h3>
+		<h3>Birth Year: {{song.birth_year}}</h3>
+		<h3>Gender: {{song.gender}}</h3>
+	</li>
+</ul>
+
+</div>
